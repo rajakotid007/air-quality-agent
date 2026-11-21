@@ -18,24 +18,11 @@ and turns raw numbers into clear, caring, actionable advice. It's free, runs loc
 
 ---
 
-## 🏗️ Architecture
-
-<p align="center">
-  <img src="assets/architecture.png" alt="Air Quality Agent architecture: User → LangGraph ReAct agent (Think → Act → Observe → Answer) → get_air_quality tool → Open-Meteo Geocoding + Air Quality APIs → Air Quality Report" width="850">
-</p>
-
-> 💡 Open [`architecture.html`](architecture.html) in a browser for the **animated** version of this diagram.
-
 ## 🎬 Video Walkthrough (3 min)
-
-
-
 
 https://github.com/user-attachments/assets/da5e207a-c3ef-430d-9158-7a69fa67d692
 
-
-
-
+<p align="center"><i>Live demo with real data · architecture deep-dive · code walkthrough · how to run it</i></p>
 
 ---
 
@@ -47,20 +34,21 @@ https://github.com/user-attachments/assets/da5e207a-c3ef-430d-9158-7a69fa67d692
 - 🩺 **Health-first answers**: who is at risk (children, elderly, people with asthma) and what to do
 - 🔒 **Local & private**: the LLM runs on your machine through Ollama
 
-## ⚙️ How it works
+## 🚀 Quick start
 
-```mermaid
-flowchart LR
-    U[👤 User question] --> A
-    subgraph A[LangGraph ReAct Agent · llama3.2]
-        T[🧠 Think] --> AC[🌱 Act] --> O[📊 Observe] --> AN[✅ Answer]
-    end
-    AC -->|tool call| G[🛠️ get_air_quality]
-    G --> S1[📍 Geocoding API<br/>city → lat/lon]
-    S1 --> S2[🌫️ Air Quality API<br/>lat/lon → AQI + pollutants]
-    S2 -->|readings| O
-    AN --> R[💬 Air Quality Report]
+```bash
+pip install -r requirements.txt   # langchain, langchain-ollama, langgraph, requests
+ollama pull llama3.2              # free local model (install Ollama from https://ollama.com)
+python agent.py                   # type 'quit', 'exit' or 'q' to leave
 ```
+
+## 🏗️ Architecture & how it works
+
+<p align="center">
+  <img src="assets/architecture.png" alt="Air Quality Agent architecture: User → LangGraph ReAct agent (Think → Act → Observe → Answer) → get_air_quality tool → Open-Meteo Geocoding + Air Quality APIs → Air Quality Report" width="850">
+</p>
+
+> 💡 Open [`architecture.html`](architecture.html) in a browser for the **animated** version of this diagram.
 
 1. **Think**: the model reads the question and extracts the city name.
 2. **Act**: it calls the `get_air_quality(city)` tool.
@@ -77,14 +65,6 @@ flowchart LR
 | 61–80 | 🔴 Poor | Everyone may start to experience health effects. |
 | 81–100 | 🟣 Very Poor | Health warnings. Limit prolonged outdoor exertion. |
 | > 100 | ⚫ Extremely Poor | Health alert: everyone should avoid outdoor activity. |
-
-## 🚀 Quick start
-
-```bash
-pip install -r requirements.txt   # langchain, langchain-ollama, langgraph, requests
-ollama pull llama3.2              # free local model (install Ollama from https://ollama.com)
-python agent.py                   # type 'quit', 'exit' or 'q' to leave
-```
 
 ## 💬 Example
 
@@ -115,7 +95,7 @@ air_quality_agent/
 ├── prompt.md                # technical prompts & design decisions
 ├── prompt_nontechnical.md   # plain-English guide
 ├── requirements.txt
-└── assets/                  # architecture image, demo video, thumbnail
+└── assets/                  # architecture image and demo video
 ```
 
 ## 🧠 Engineering highlights
