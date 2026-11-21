@@ -28,13 +28,10 @@ and turns raw numbers into clear, caring, actionable advice. It's free, runs loc
 
 ## 🎬 Video Walkthrough (3 min)
 
-<p align="center">
-  <a href="assets/air_quality_agent_demo.mp4">
-    <img src="assets/video_thumbnail.png" alt="Watch the 3-minute Air Quality Agent walkthrough" width="720">
-  </a>
-</p>
 
-<p align="center"><i>Click the thumbnail to watch: live demo with real data, architecture deep-dive, code walkthrough, and how to run it.</i></p>
+https://github.com/user-attachments/assets/4163e4cb-4d1c-40b5-a800-55812ce0f6e8
+
+
 
 ---
 
