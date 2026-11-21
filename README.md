@@ -29,7 +29,11 @@ and turns raw numbers into clear, caring, actionable advice. It's free, runs loc
 ## 🎬 Video Walkthrough (3 min)
 
 
-https://github.com/user-attachments/assets/4163e4cb-4d1c-40b5-a800-55812ce0f6e8
+
+
+https://github.com/user-attachments/assets/da5e207a-c3ef-430d-9158-7a69fa67d692
+
+
 
 
 
